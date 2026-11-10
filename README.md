@@ -4,7 +4,7 @@ Classical image enhancement pipeline (no deep learning) for the Computer Vision 
 
 ## Requirements
 
-- Python 3.10 or newer
+- Python 3.12
 - Dependencies: numpy, opencv-python, matplotlib, scikit-image (only for SSIM)
 
 ```
@@ -20,6 +20,10 @@ python main.py
 ```
 
 The script creates the degraded images, applies all the methods, computes the metrics and saves everything.
+
+## Images
+
+Three real color photos from Wikimedia Commons are used (see the table at the end). Before the experiment they were resized to 1600 px on the long side (area interpolation), to keep the files small and NL-means fast. The images in `images/original/` are already resized: these are the exact inputs used for all results.
 
 ## Degradation
 
@@ -62,6 +66,14 @@ The original images are used as references for the metrics. In a real scenario a
 
 ## Image sources
 
-| File | Source | License |
-|------|--------|---------|
-| (fill in) | (fill in) | (fill in) |
+| File | Condition | Source | Author | License |
+|------|-----------|--------|--------|---------|
+| 20190617_Nebbia_(3) | fog, low contrast | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:20190617_Nebbia_(3).jpg) | Gb89.2 | CC0 1.0 |
+| 500px_photo_(65567999) | backlight, non-uniform illumination | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:500px_photo_(65567999).jpeg) (imported from 500px) | Carlota Grau | CC BY 3.0 |
+| At_Cueva_del_Viento_2023_069 | cave, flashlight, dark areas | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:At_Cueva_del_Viento_2023_069.jpg) | Mike Peel (www.mikepeel.net) | CC BY-SA 4.0 |
+
+Changes made to the images: resized to 1600 px on the long side, then degraded and processed as described above.
+
+## Report
+
+The PDF report is in the course submission. Results in `results/metrics.csv` are the ones reported there.
